@@ -1,0 +1,13 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+  .center{
+    position:absolute;
+    left: 680px;
+  }
+
+  .white-icon {
+    color:  white;
+  }

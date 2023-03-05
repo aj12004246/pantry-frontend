@@ -1,0 +1,33 @@
+
+
+.user-container {
+    display: flex; 
+    flex-wrap: wrap; 
+   
+    height: 100%; 
+}
+
+.user {
+    height: 250px; 
+    width: 200px;
+    margin: 10px;
+}
+
+.example-button-container {
+    position: absolute;
+    bottom: 20px; 
+    left: 20px; 
+}
+
+.invite-container {
+    position: absolute; 
+    top: 90px; 
+    right: 20px;
+}
+
+.user button {
+    width: 25%; 
+    position: absolute; 
+    bottom: 0;
+    height: 50px; 
+}

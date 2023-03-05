@@ -1,0 +1,59 @@
+<mat-stepper #stepper class="mat-stepper-vertical" style="background-color: #FFD740;">
+    <mat-step>
+        <ng-template matStepLabel>Descibe the step</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>step description</mat-label>
+          <input matInput placeholder="Descibe" [(ngModel)]="description"  required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+
+    </mat-step>
+    <mat-step label="What ingredient are you using">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Ingredient</mat-label>
+          <mat-select  [(ngModel)]="itemId">
+            <mat-option [value]=0>N/A</mat-option>
+            <mat-option *ngFor="let item of items" [value]="item.id">{{item.name}}</mat-option>
+          </mat-select>
+</mat-form-field>
+
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>How much was used</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>weight</mat-label>
+        <input matInput placeholder="weight" [(ngModel)]="weight" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill" style="width: 120px;">
+        <mat-label>Unit</mat-label>
+        <mat-select [(ngModel)]="unit">
+            <mat-option value=0>N/A</mat-option>
+            <mat-option value=1>Gram</mat-option>
+            <mat-option value=5>Tsp</mat-option>
+            <mat-option value=14>Tbsp </mat-option>
+            <mat-option value=28>Ounce</mat-option>
+            <mat-option value=57>1/4 Cup</mat-option>
+            <mat-option value=113>1/2 Cup</mat-option>
+            <mat-option value=227>Cup</mat-option>    
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="validateStep(main.recipeId, description, itemId,weight,unit, stepper) ">Next Step</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+
+
+  
+  <button (click)="main.submitRecipe()"mat-raised-button color="primary" >Submit</button>
+
+
+     

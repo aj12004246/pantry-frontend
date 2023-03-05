@@ -1,0 +1,21 @@
+<div class="title-container">
+    <h1 style="color: #FFD740; padding-left: 20px; text-align: center;"> New Recipe </h1> 
+
+</div>
+
+
+<div style="display: flex; align-items: center; justify-content: center;">
+    <mat-form-field  appearance="fill" style="width:433px;">
+        <mat-label>Name</mat-label>
+        <textarea matInput [(ngModel)]="newRecipe.name" name="name" placeholder="Name"  required>
+       </textarea>
+    </mat-form-field><span style="margin-left: 10px;"></span>
+  
+    <mat-form-field  appearance="fill" style="width:433px;">
+        <mat-label>Image</mat-label>
+        <textarea matInput [(ngModel)]="newRecipe.img" name="img" placeholder="Image"  required>
+       </textarea>
+    </mat-form-field><span style="margin-left: 10px;"></span>
+  
+    <button (click)="recipe.validateRecipe(main.accountId, newRecipe.name, newRecipe.img )" mat-raised-button color="accent" >Submit</button>
+  </div>

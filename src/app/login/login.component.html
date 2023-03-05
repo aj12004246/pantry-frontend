@@ -1,0 +1,22 @@
+
+
+
+<div class="container align=center">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" [(ngModel)]="email" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>Password*</mat-label>
+      <input matInput type="password" [(ngModel)]="password">
+    </mat-form-field><br>
+    <div class="button-container">
+        <button mat-raised-button color="accent" (click)="register.validateLogin(email,password)">Submit</button>
+    </div>
+    <div >
+        <button mat-raised-button color="accent" (click)="main.openRegister()">Need an Account?</button>
+    </div>
+  </div>

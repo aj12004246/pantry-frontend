@@ -1,0 +1,52 @@
+
+
+
+<div class="title-container">
+
+<ng-template [ngIf]="recipes.length == 0">
+    <div><h1 style="color: #FFD740; padding-left: 20px;">Your friend has no recipes</h1></div>
+    </ng-template>
+
+  </div>
+
+  <div class="title-container">
+
+
+    <h1 style="color: #FFD740; padding-left: 20px; text-align: center;" *ngIf="recipes.length > 0">Friend Recipes</h1>
+    
+    </div>
+  
+<div class="item-container">
+
+  
+  <mat-card class="item" *ngFor="let recipe of recipes" style="background-color:#FFD740">
+  
+        <img style="object-fit: cover; height: 200px; filter: brightness(0.9);" class="productImg" mat-card-image src={{recipe.img}} alt={{recipe.name}}>
+        <div style="display: flex; justify-content: flex-start; align-items: flex-end; position: absolute; bottom: 1; left: 0; padding: 10px;">
+            <h2 style="color: #FFD740;"></h2>
+        
+    </div>
+  
+    <mat-card-content style="display: flex; justify-content: space-between;">
+     <h3>{{recipe.name}}</h3>  
+        <div style="display: flex; justify-content: flex-end;">
+        <button mat-icon-button style="margin-right: 10px; margin-left: 10px; color:black;"
+        (click)="main.openFriendSteps(recipe.id)">
+          <mat-icon>open_in_new</mat-icon>
+      </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  </div>
+<!-- 
+
+  <div class="item-container">
+    <mat-card class="item" *ngFor="let recipe of recipes">
+        <mat-card-content><b>Name:</b>{{recipe.name}}</mat-card-content>
+        <img class="productImg" mat-card-lg-image src={{recipe.img}} alt={{recipe.name}}>
+        <button (click)='main.openFriendSteps(recipe.id)'mat-raised-button color="primary" style="margin-right: 50px;margin-left: 50px;"
+        >View
+      </button>
+      </mat-card>
+    </div> -->
+   

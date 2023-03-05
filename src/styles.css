@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-image: url('C:\Users\York Laptop 010\OneDrive\Pictures\Screenshots\Screenshot_20230208_122744.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .black-navbar {
+    background-color: black;
+  }
+
+  .white-text {
+    color: white;
+  }
+
+  .mat-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 75px;
+  }
+
+  .title-container {
+    margin-top: 75px;
+  }
+
+  

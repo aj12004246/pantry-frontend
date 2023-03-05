@@ -1,0 +1,15 @@
+.right-align{
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+    }
+    
+    
+.friends {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+    
+    

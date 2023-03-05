@@ -1,0 +1,78 @@
+
+<div class="title-container">
+  
+<h1 style="color: #FFD740; padding-left: 20px;">Hi, {{main.userName}} {{main.familyName}} </h1> 
+
+</div>
+
+
+<ng-template [ngIf]="items.length == 0">
+    <div><h1 style="color: #FFD740; padding-left: 20px;">You have no items</h1></div>
+    </ng-template>
+    <h1 *ngIf="items.length > 0" class="yellow-title" style="text-align: center;">ITEMS</h1>
+
+    <div class="item-container">
+
+
+        <mat-card class="item" *ngFor="let item of items" style="background-color:#FFD740">
+            <!-- <img style="object-fit: cover; height: 200px;" class="productImg" mat-card-image src={{item.img}} alt={{item.name}}> -->
+        
+                <img style="object-fit: cover; height: 200px; filter: brightness(0.7);" class="productImg" mat-card-image src={{item.img}} alt={{item.name}}>
+                <div style="display: flex; justify-content: flex-start; align-items: flex-end; position: absolute; bottom: 1; left: 0; padding: 10px;">
+                    <h2 style="color: #FFD740;">{{item.name}}</h2>
+                
+            </div>
+
+            <mat-card-content style="display: flex; justify-content: space-between;">
+             <b>{{item.weight}} g | {{item.calories}} calories</b>  
+                <div style="display: flex; justify-content: flex-end;">
+                <button mat-icon-button style="margin-right: 10px;  color:black;"
+                (click)='itemss.openEditItem(item)'>
+                <mat-icon>edit</mat-icon>
+              </button>
+                <button mat-icon-button color="warn" style="margin-right: 10px; margin-left: 10px;"
+                   (click)='deleteItem(item.id)'>
+                  <mat-icon>close</mat-icon>
+              </button>
+              </div>
+            </mat-card-content>
+
+            <!-- <mat-card-content>
+                <b>{{item.weight}} g | {{item.calories}} calories</b>
+            
+            <div style="display: flex; justify-content: flex-center;">
+                <button mat-icon-button color="primary" style="margin-right: 10px; margin-left: 10px;"
+                (click)='itemss.openEditItem(item)'>
+                <mat-icon>edit</mat-icon>
+              </button>
+                <button mat-icon-button color="warn" style="margin-right: 10px; margin-left: 10px;"
+                   (click)='deleteItem(item.id)'>
+                  <mat-icon>close</mat-icon>
+              </button>
+              </div>
+            </mat-card-content> -->
+        </mat-card>
+    </div>
+
+<!-- <div class="item-container">
+    <mat-card class="item" *ngFor="let item of items">
+        <mat-card-content><b>Name: </b>{{item.name}}</mat-card-content>
+        <mat-card-content><b>Weight: </b>{{item.weight}} g</mat-card-content>
+        <mat-card-content><b>Calories: </b>{{item.calories}}</mat-card-content>
+        <img style="width:100%" class="productImg" mat-card-lg-image src={{item.img}} alt={{item.name}}>
+        <div style="display: flex; justify-content: flex-center;">
+            <button mat-icon-button color="primary" style="margin-right: 10px; margin-left: 10px;"
+            (click)='itemss.openEditItem(item)'>
+            <mat-icon>edit</mat-icon>
+          </button>
+            <button mat-icon-button color="warn" style="margin-right: 10px; margin-left: 10px;"
+               (click)='deleteItem(item.id)'>
+              <mat-icon>close</mat-icon>
+          </button>
+          </div>
+    </mat-card>
+</div> -->
+
+<div class="add-button-container">
+    <button mat-raised-button color="accent" (click)="main.openNewItem()">Add Item</button>
+</div>

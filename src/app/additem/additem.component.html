@@ -1,0 +1,66 @@
+<div class="title-container">
+    <h1 style="color: #FFD740; padding-left: 20px; text-align: center;"> New Item </h1> 
+
+</div>
+
+
+<div class="container">
+    <div class="grid">
+        <mat-form-field  appearance="fill" style="width:433px;">
+            <mat-label>Name</mat-label>
+            <textarea matInput [(ngModel)]="newItem.name" name="name" placeholder="Name"  required>
+            </textarea>
+        </mat-form-field>
+        <span style="margin-left: 10px;"></span>
+
+        <mat-form-field appearance="fill" style="width: 120px;" >
+            <mat-label>Image</mat-label>
+            <mat-select [(ngModel)]="newItem.img" name="img" placeholder="image">
+                <mat-option value="https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Tomatoes</mat-option>
+                <mat-option value="https://images.pexels.com/photos/2893635/pexels-photo-2893635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Bell Peppers</mat-option>
+                <mat-option value="https://images.pexels.com/photos/603030/pexels-photo-603030.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Corn</mat-option>
+                <mat-option value="https://images.pexels.com/photos/51372/kale-vegetables-brassica-oleracea-var-sabellica-l-51372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Kale </mat-option>
+                <mat-option value="https://images.pexels.com/photos/54082/carrots-vegetables-food-orange-54082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Carrot</mat-option>
+                <mat-option value="https://images.pexels.com/photos/255469/pexels-photo-255469.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Peas</mat-option>
+                <mat-option value="https://images.pexels.com/photos/52521/pistachio-nuts-pistachios-crisps-52521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Peanuts</mat-option>  
+                <mat-option value="https://images.pexels.com/photos/12956043/pexels-photo-12956043.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Avocados</mat-option>  
+                <mat-option value="https://images.pexels.com/photos/12956096/pexels-photo-12956096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Mushrooms</mat-option>  
+                <mat-option value="https://images.pexels.com/photos/15421637/pexels-photo-15421637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Onions</mat-option>  
+                <mat-option value="https://images.pexels.com/photos/46174/strawberries-berries-fruit-freshness-46174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Strawberries</mat-option>  
+                <mat-option value="https://images.pexels.com/photos/1435737/pexels-photo-1435737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">Oranges</mat-option> 
+                <mat-option value="https://cdn.pixabay.com/photo/2020/05/21/10/43/flakes-5200175_960_720.jpg">Oats</mat-option> 
+                <mat-option value="https://cdn.pixabay.com/photo/2020/04/13/21/38/white-5040127_960_720.jpg">Sugar Cubes</mat-option>
+            </mat-select>
+    </mat-form-field>
+
+<!-- 
+        <mat-form-field  appearance="fill" style="width:433px;">
+            <mat-label>Image</mat-label>
+            <textarea matInput [(ngModel)]="newItem.img" name="img" placeholder="Image"  required>
+            </textarea>
+        </mat-form-field> -->
+        <mat-form-field  appearance="fill" style="width:433px;">
+            <mat-label>Weight(Stored in Grams)</mat-label>
+            <textarea matInput [(ngModel)]="newItem.weight" name="weight" placeholder="Weight(Stored in Grams)"  required>
+            </textarea>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 120px;" >
+                <mat-label>Unit</mat-label>
+                <mat-select [(ngModel)]="item.unit">
+                    <mat-option value=1>Gram</mat-option>
+                    <mat-option value=227>Cup</mat-option>
+                    <mat-option value=453>Pound</mat-option>
+                    <mat-option value=1000>Kg</mat-option>
+                </mat-select>
+        </mat-form-field>
+        <mat-form-field  appearance="fill" style="width:433px;">
+            <mat-label>Calories</mat-label>
+            <textarea matInput [(ngModel)]="newItem.calories" name="calories" placeholder="Calories"  required>
+           </textarea>
+        </mat-form-field>
+        <div class="submit-button-container">
+            <button (click)="item.validateItem(main.accountId, newItem.name, newItem.img, newItem.weight, newItem.calories,item.unit)" mat-raised-button color="accent" type="submit">Submit</button>
+        </div>
+    </div>
+   
+</div>

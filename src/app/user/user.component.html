@@ -1,0 +1,41 @@
+
+
+<div class="title-container">
+
+<h1 style="color: #FFD740; padding-left: 20px;">Welcome Back {{main.familyName}} Family</h1>
+
+</div>
+
+<!-- <div  *ngFor="let user of users" class="user-container" style="display: flex; justify-content: center; margin-top: 225px; height: 100%;">
+  <button style="height: 150px; width: 300px; margin: 10px;" (click)="main.openPantry(user.id)" mat-flat-button color="accent"><b>{{user.name}}</b></button>
+</div> -->
+
+<div class="user-container" style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 225px; height: 100%;">
+  <ng-container *ngFor="let user of users">
+    <button style="height: 150px; width: 300px; margin: 10px;" (click)="main.openPantry(user.id)" mat-flat-button color="accent"><b>{{user.name}}</b></button>
+  </ng-container>
+</div>
+
+
+<!-- 
+<div class="user-container" *ngFor="let user of users">
+  <button style="height: 150px; width: 300px;" (click)="main.openPantry(user.id)" mat-flat-button color="accent"><b>{{user.name}}</b></button>
+
+</div> -->
+
+<div class="example-button-container">
+    <button  (click)="main.openUserApply()"mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+      <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+<div class="invite-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Invite Family</mat-label>
+    <mat-select [(ngModel)]="FriendId">
+      <mat-option [value]=0>N/A</mat-option>
+      <mat-option *ngFor="let account of accounts" [value]="account.id">{{account.name}} Family</mat-option>
+    </mat-select>
+    <button (click)="validateFriend(FriendId)" mat-flat-button color="accent">Add</button>
+  </mat-form-field>
+</div>

@@ -1,0 +1,50 @@
+
+<div class="overlay">
+
+<app-navbar *ngIf="!main.showRegister && !main.showLogin && !main.showUser && !main.showUserApply"></app-navbar>
+
+<app-loginnav *ngIf="main.showRegister || main.showLogin || main.showUser || main.showUserApply"></app-loginnav>
+
+<app-register *ngIf="main.showRegister"></app-register>
+
+<app-login *ngIf="main.showLogin"></app-login>
+
+
+
+<app-user *ngIf="main.showUser"></app-user>
+
+<app-pantry *ngIf="main.showPantry"></app-pantry>
+
+<app-userapply *ngIf="main.showUserApply"></app-userapply>
+
+<app-additem *ngIf="main.showNewItem"></app-additem>
+
+<app-createrecipe *ngIf="main.showNewRecipe"></app-createrecipe>
+
+<ng-container *ngIf="main.showSteps">
+  <app-newrecipe></app-newrecipe>
+  <app-steps></app-steps>
+</ng-container>
+
+<app-invitelist *ngIf="main.showInviteList"></app-invitelist>
+
+<app-friendrecipes *ngIf="main.showFriendRecipes"></app-friendrecipes>
+
+<app-friendsteps *ngIf="main.showFriendSteps"></app-friendsteps>
+
+<app-recipelist *ngIf="main.showRecipes"></app-recipelist>
+
+<app-mysteps *ngIf="main.showRecipeSteps"></app-mysteps>
+
+<app-friends *ngIf="main.showFriends"></app-friends>
+
+<app-reddit *ngIf="main.showReddit"></app-reddit>
+
+
+<app-edititem *ngIf="main.showEditItem"></app-edititem>
+
+<app-editstep *ngIf="main.showEditStep"></app-editstep>
+
+<app-editmystep *ngIf="main.showEditMyStep"></app-editmystep>
+
+</div>

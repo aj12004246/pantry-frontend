@@ -1,0 +1,17 @@
+
+.container
+{
+    position: absolute;
+    top: 30%;
+    left: 42%;
+ }
+.txtinput
+{
+    width: 215px;
+} 
+
+.login
+{
+    padding: 10px;
+}
+

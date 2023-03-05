@@ -1,0 +1,31 @@
+
+
+  <div class="title-container">
+<ng-template [ngIf]="invites.length == 0">
+    <div><h1 style="color: #FFD740; padding-left: 20px;">You have no friend requests</h1></div>
+    </ng-template>
+
+</div>
+
+<div class="title-container">
+
+<h1 style="color: #FFD740; padding-left: 20px; text-align: center;" *ngIf="invites.length > 0">Friend Requests</h1>
+
+</div>
+
+<button class="friends" mat-raised-button color="accent" (click)="main.openFriends()">My Friends</button>
+
+<mat-card style="background-color: #FFD740;" class="user" *ngFor="let invite of invites">
+    <mat-card-content>{{invite.name}} Family</mat-card-content>
+    <div style="display: flex; justify-content: flex-end;">
+        <button mat-icon-button style="margin-right: 10px; color:black;"
+            (click)="acceptFriend(main.accountId, invite.friendId)">
+            <mat-icon>check</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" style="margin-right: 10px; margin-left: 10px;"
+            (click)="rejectFriend(main.accountId, invite.friendId)">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</mat-card>
+

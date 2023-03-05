@@ -1,0 +1,27 @@
+
+
+<div class="title-container">
+<h1 style="color: #FFD740; padding-left: 20px;">Explore Reddit Recipes</h1>
+</div>
+
+
+<div  class="select-box" >
+
+    <select   (change)="searchReddit($event)" >
+        <option >Please clieck a recipe title</option>
+        <option 
+        *ngFor="let recipe of recipes" value={{recipe.name}}>
+          {{recipe.name}}</option>
+      </select>
+
+
+  </div>
+
+
+  <div class="card-container" *ngIf="redditResponse">
+
+<mat-card style="background-color: #FFD740;" class="card" *ngFor="let response of redditResponse.data.children">
+    <mat-card-content>{{response.data.title}}</mat-card-content>
+    </mat-card>
+
+  </div>

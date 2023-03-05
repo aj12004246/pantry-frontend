@@ -1,0 +1,16 @@
+<div class="title-container">
+    <h1 style="color: #FFD740; padding-left: 20px;">Steps</h1>
+    </div>
+    
+
+
+<mat-card style="background-color: #FFD740;"  class="user" *ngFor="let step of steps; let i = index">
+    <mat-card-header>
+        <mat-card-subtitle><b>Step {{i + 1}}</b></mat-card-subtitle>
+        </mat-card-header>
+    <mat-card-content>{{step.description}}</mat-card-content>
+    <ng-container  *ngIf="step.itemWeight && step.itemName">
+        <mat-card-content ><b>using:</b> {{step.itemWeight}}g of {{step.itemName}} </mat-card-content>
+        </ng-container>
+    
+  </mat-card>
